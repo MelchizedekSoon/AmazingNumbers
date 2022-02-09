@@ -4,10 +4,10 @@ import java.math.BigInteger;
 import java.util.*;
 
 public class Main {
-    boolean isSingle;
-    boolean isMultiple;
-    boolean isMultipleSpecific;
-    boolean isMultipleSpecificPlural;
+    boolean isSingle; // if the input is one number
+    boolean isMultiple; // if the input is two numbers
+    boolean isMultipleSpecific; // if the input is 2 numbers and one word (a number type)
+    boolean isMultipleSpecificPlural; // if the input is 2 numbers and multiple words (number types)
     boolean isErred = false;
     boolean isDisplayable = true;
     List<String> availableProperties;
@@ -20,8 +20,8 @@ public class Main {
     BigInteger ten = new BigInteger("10");
 
     public void amazingNumProgram() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Amazing Numbers!");
+        Scanner scanner = new Scanner(System.in); // Receiving user input
+        System.out.println("Welcome to Amazing Numbers!"); // Printing out information on program
         System.out.println();
         System.out.println("Supported requests:");
         System.out.println("- enter a natural number to know its properties;");
@@ -34,12 +34,12 @@ public class Main {
         System.out.println("- separate the parameters with one space;");
         System.out.println("- enter 0 to exit.");
         boolean isRunning = true;
-        while (isRunning) {
+        while (isRunning) { // this will run while boolean is set to true, ends on false
             System.out.println();
             System.out.print("Enter a request: ");
-            String input = scanner.nextLine();
-            input = duplicateRemover(input);
-            int spaces = input.split("\\s+").length;
+            String input = scanner.nextLine(); // taking user input and placing it into String
+            input = duplicateRemover(input); // taking String and checking for duplicate commands
+            int spaces = input.split("\\s+").length; // checking for how many words/numbers are in input
             if (spaces == 1) {
                 if (input.equals("0")) {
                     System.out.println();
@@ -54,8 +54,8 @@ public class Main {
             } else if (spaces > 3) {
                 isMultipleSpecificPlural = true;
             }
-            this.availableProperties = new ArrayList<>();
-            this.notIncludedList = new ArrayList<>();
+            this.availableProperties = new ArrayList<>(); // creating a list to add number types
+            this.notIncludedList = new ArrayList<>(); // creating a list for if input does not match one of the number types
             this.availableProperties.add("EVEN");
             this.availableProperties.add("ODD");
             this.availableProperties.add("BUZZ");
@@ -83,17 +83,17 @@ public class Main {
             System.out.println();
             if (isRunning) {
                 if (isSingle) {
-                    BigInteger number = new BigInteger("-1");
+                    BigInteger number = new BigInteger("-1"); //Creating a BigInteger number. This is used for large numbers. It's set to -1 because it must be 0 or greater. We will update this in the following code
                     try {
-                        number = BigInteger.valueOf(Long.parseLong(input));
+                        number = BigInteger.valueOf(Long.parseLong(input)); //Trying to add number, if it isn't a number, it will catch an exception and go to catch
                     } catch (NumberFormatException ignored) {
                     }
-                    int numCompare = number.compareTo(zero);
-                    if (numCompare <= 0) {
+                    int numCompare = number.compareTo(zero); //We are comparing the number to 0 and if it is less, it returns -1, if equal 0, if greater 1
+                    if (numCompare <= 0) { //this will be fulfilled if the int above is less than or equal to 0. This is to ensure that the number is greater or equal to 0 as required
                         System.out.println("The first parameter should be a natural number or zero.");
-                    } else {
+                    } else { //if it is greater than 0, the following will fulfill
                         System.out.println("Properties of " + number);
-                        System.out.println("even: " + evenChecker(number));
+                        System.out.println("even: " + evenChecker(number)); //This returns a boolean of true or false, true if the number is even, false is not. This is the case for all of these checkers and their code further down
                         System.out.println("odd: " + oddChecker(number));
                         System.out.println("buzz: " + buzzChecker(number));
                         System.out.println("duck: " + duckChecker(number));
@@ -107,11 +107,11 @@ public class Main {
                         System.out.println("sad: " + sadChecker(number));
                     }
                 } else {
-                    String[] requestArray = input.toUpperCase().split(" ");
-                    BigInteger startingNum = BigInteger.valueOf(Long.parseLong(requestArray[0]));
-                    BigInteger numAmount = BigInteger.valueOf(Long.parseLong(requestArray[1]));
+                    String[] requestArray = input.toUpperCase().split(" "); //array of the user input
+                    BigInteger startingNum = BigInteger.valueOf(Long.parseLong(requestArray[0])); //the starting number from the input
+                    BigInteger numAmount = BigInteger.valueOf(Long.parseLong(requestArray[1])); //the amount of numbers required from the input
                     if (isMultiple) {
-                        if (Long.parseLong(String.valueOf(startingNum)) < 0) {
+                        if (Long.parseLong(String.valueOf(startingNum)) < 0) { //number checkers again
                             System.out.println("The first parameter should be a natural number or zero.");
                         }
                         if (Long.parseLong(String.valueOf(numAmount)) <= 0) {
@@ -120,7 +120,7 @@ public class Main {
                             for (int i = 0; i < Long.parseLong(String.valueOf(numAmount)); i++) {
                                 System.out.print(startingNum + " is ");
                                 StringBuilder sb = new StringBuilder();
-                                if (evenChecker(startingNum)) {
+                                if (evenChecker(startingNum)) { //these test if the number is even, if so, it adds the text below it
                                     sb.append(" even,");
                                 } else if (oddChecker(startingNum)) {
                                     sb.append(" odd,");
@@ -155,14 +155,14 @@ public class Main {
                                 if (sadChecker(startingNum)) {
                                     sb.append(" sad,");
                                 }
-                                System.out.println(sb.toString().trim().substring(0, sb.toString().length() - 2));
+                                System.out.println(sb.toString().trim().substring(0, sb.toString().length() - 2)); //this removes the last pieces of the String so it doesn't end in "happy, " but "happy"
                                 startingNum = startingNum.add(one);
                             }
                         }
                     } else if (isMultipleSpecific) {
-                        String numType = requestArray[2].toUpperCase();
+                        String numType = requestArray[2].toUpperCase(); //The number type ("even, odd") etc.
                         int numTypeCount = 0;
-                        boolean isProperty = false;
+                        boolean isProperty = false; //boolean to ensure that the number type the user inputs is in the available property list which includes all the even, odd options
                         for (String properties : this.availableProperties) {
                             if (properties.equals(numType)) {
                                 isProperty = true;
@@ -184,11 +184,11 @@ public class Main {
                             System.out.println("The second parameter should be a natural number.");
                         }
                         if (!isProperty) {
-                            System.out.println("The property [" + numType + "] is wrong.");
+                            System.out.println("The property [" + numType + "] is wrong."); //if it is not a property, this is displayed
                             System.out.println("Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SUNNY, SQUARE, JUMPING, HAPPY, SAD]");
                         } else {
                             while (numTypeCount < Long.parseLong(String.valueOf(numAmount))) {
-                                StringBuilder sb = new StringBuilder();
+                                StringBuilder sb = new StringBuilder(); //same as above
                                 if (evenChecker(startingNum)) {
                                     sb.append(" even,");
                                 } else if (oddChecker(startingNum)) {
@@ -225,39 +225,39 @@ public class Main {
                                     sb.append(" sad,");
                                 }
                                 String line = sb.toString().trim().substring(0, sb.toString().length() - 2);
-                                if (numType.startsWith("-")) {
-                                    String minus = numType.substring(1);
-                                    if (!(sb.toString().toUpperCase().contains(minus))) {
+                                if (numType.startsWith("-")) { //if the string starts with - like -EVEN, we want to go to the code under it
+                                    String minus = numType.substring(1); //this makes -EVEN, EVEN so String minus = "EVEN" if numType = "-EVEN"
+                                    if (!(sb.toString().toUpperCase().contains(minus))) { //this means if the String does not contain minus, because we're not including anything that is minus because that num type is excluded, then we do the code under it
                                         numTypeCount++;
                                         System.out.print(startingNum + " is ");
                                         System.out.println(line);
                                     }
-                                } else if (sb.toString().toUpperCase().contains(numType)) {
+                                } else if (sb.toString().toUpperCase().contains(numType)) { //if the number type doesn't start with "-" then we want to display because we want the numType included as that means the number is an even or happy or jumping number etc.
                                     numTypeCount++;
                                     System.out.print(startingNum + " is ");
                                     System.out.println(line);
 
                                 }
-                                startingNum = startingNum.add(one);
+                                startingNum = startingNum.add(one); //this increases the starting number by one so we can check the next number up until we have gotten all the numbers required be that 10 or 20 whatever was inputted
                             }
                         }
                     } else if (isMultipleSpecificPlural) {
                         int numTypeCount = 0;
                         boolean isIncluded;
-                        for (String includedProperty : this.includedProperties) {
+                        for (String includedProperty : this.includedProperties) { // this is a check to see if Strings that were inputted are all contained in availableProperties
                             isIncluded = false;
                             for (String availableProperty : availableProperties) {
                                 if (availableProperty.equals(includedProperty)) {
-                                    isIncluded = true;
+                                    isIncluded = true; //if it is we can break and set the boolean to true because it is
                                     break;
                                 }
                             }
-                            if (!isIncluded) {
+                            if (!isIncluded) { //if not, we will go here after we've searched through all available properties for matching property and then add it to the notIncluded list
                                 this.notIncludedList.add(includedProperty);
                             }
                         }
                         try {
-                            if (Long.parseLong(String.valueOf(requestArray[0])) <= 0) {
+                            if (Long.parseLong(String.valueOf(requestArray[0])) <= 0) {//checking for below 0. It actually says equal to 0, it may should've been < 0
                                 System.out.println("The first parameter should be a natural number or zero.");
                             }
                         } catch (NumberFormatException e) {
@@ -265,7 +265,7 @@ public class Main {
                             System.out.println("The first parameter should be a natural number or zero.");
                         }
                         try {
-                            if (Long.parseLong(String.valueOf(requestArray[1])) < 0) {
+                            if (Long.parseLong(String.valueOf(requestArray[1])) < 0) {// same as above
                                 System.out.println("The second parameter should be a natural number.");
                             }
                         } catch (NumberFormatException e) {
@@ -292,7 +292,7 @@ public class Main {
                             System.out.println("The properties " + notListed + " are wrong.");
                             System.out.println("Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SUNNY, SQUARE, JUMPING, HAPPY, SAD]");
                         }
-                        if ((this.includedProperties.contains("EVEN") && this.includedProperties.contains("ODD")) ||
+                        if ((this.includedProperties.contains("EVEN") && this.includedProperties.contains("ODD")) || //checking if its input has even and odd as it can't be both
                                 (this.includedProperties.contains("-EVEN") && this.includedProperties.contains("-ODD"))) {
                             if (!this.isErred) {
                                 this.isErred = true;
@@ -305,7 +305,7 @@ public class Main {
                                 System.out.println("There are no numbers with these properties.");
                             }
                         }
-                        if ((this.includedProperties.contains("DUCK") && this.includedProperties.contains("SPY")) || (this.includedProperties.contains("-DUCK") && this.includedProperties.contains("-SPY"))) {
+                        if ((this.includedProperties.contains("DUCK") && this.includedProperties.contains("SPY")) || (this.includedProperties.contains("-DUCK") && this.includedProperties.contains("-SPY"))) { //cant have duck and spy
                             if (!this.isErred) {
                                 this.isErred = true;
                             }
@@ -317,7 +317,7 @@ public class Main {
                                 System.out.println("There are no numbers with these properties.");
                             }
                         }
-                        if ((this.includedProperties.contains("SUNNY") && this.includedProperties.contains("SQUARE")) || (this.includedProperties.contains("-DUCK") && this.includedProperties.contains("-SPY"))) {
+                        if ((this.includedProperties.contains("SUNNY") && this.includedProperties.contains("SQUARE")) || (this.includedProperties.contains("-SUNNY") && this.includedProperties.contains("-SQUARE"))) { //cant be sunny and square
                             if (!this.isErred) {
                                 this.isErred = true;
                             }
@@ -329,7 +329,7 @@ public class Main {
                                 System.out.println("There are no numbers with these properties.");
                             }
                         }
-                        if ((this.includedProperties.contains("SAD") && this.includedProperties.contains("HAPPY")) ||
+                        if ((this.includedProperties.contains("SAD") && this.includedProperties.contains("HAPPY")) || //cant be sad and happy
                                 (this.includedProperties.contains("-SAD") && this.includedProperties.contains("-HAPPY"))) {
                             if (!this.isErred) {
                                 this.isErred = true;
@@ -342,11 +342,11 @@ public class Main {
                                 System.out.println("There are no numbers with these properties.");
                             }
                         }
-                        propertyComparer();
-                        if (!this.isErred) {
+                        propertyComparer(); //checks if input has -EVEN and EVEN type pairs i.e. -JUMPING, JUMPING
+                        if (!this.isErred) { //if isErred, the boolean made to check for error is false, we will go to code below
                             while (numTypeCount < Long.parseLong(String.valueOf(numAmount))) {
                                 StringBuilder sb = new StringBuilder();
-                                if (evenChecker(startingNum)) {
+                                if (evenChecker(startingNum)) { //same as before
                                     sb.append(" even,");
                                 } else if (oddChecker(startingNum)) {
                                     sb.append(" odd,");
