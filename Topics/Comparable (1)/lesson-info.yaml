@@ -1,0 +1,10 @@
+custom_name: Comparable
+content:
+- Theory
+- Implement comparing by additional fields
+- compareTo
+- Implement Comparable
+- Comparing objects
+- Rewrite compareTo method
+- Rules
+- Implement compareTo method

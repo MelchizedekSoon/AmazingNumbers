@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../ProgramData/chocolatey/lib/gradle/tools/gradle-7.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task/build/classes/java" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task/build/test-results" />
+            <option value="$PROJECT_DIR$/Amazing Numbers/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Concat positive numbers" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Find the nearest number" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Powers of indexes" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/The behavior of methods" />
+            <option value="$PROJECT_DIR$/Topics/ArrayList/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/NPE, zero or null" />
+            <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/Only true or false" />
+            <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/Result of the code" />
+            <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/Safe converting" />
+            <option value="$PROJECT_DIR$/Topics/Boxing and unboxing/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Comparing objects" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Implement Comparable" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Implement compareTo method" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Implement comparing by additional fields" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Rewrite compareTo method" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Rules" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Comparable (1)/compareTo" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/A correct example" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/Check a number is positive" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/Interval" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/Statements" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/Symmetrical number" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/The army of units" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Conditional statement/Triangle" />
+            <option value="$PROJECT_DIR$/Topics/Generics and Object/Boxes are not just objects" />
+            <option value="$PROJECT_DIR$/Topics/Generics and Object/Correct the usage of non-generic class" />
+            <option value="$PROJECT_DIR$/Topics/Generics and Object/Initialize an object of a generic class" />
+            <option value="$PROJECT_DIR$/Topics/Generics and Object/Reusing code with Object" />
+            <option value="$PROJECT_DIR$/Topics/Generics and Object/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Generics and Object/What is a type" />
+            <option value="$PROJECT_DIR$/Topics/Integer types and operations/Calculate the digit" />
+            <option value="$PROJECT_DIR$/Topics/Integer types and operations/Desks" />
+            <option value="$PROJECT_DIR$/Topics/Integer types and operations/Reversing input numbers" />
+            <option value="$PROJECT_DIR$/Topics/Integer types and operations/Snail" />
+            <option value="$PROJECT_DIR$/Topics/Integer types and operations/Squirrels and nuts" />
+            <option value="$PROJECT_DIR$/Topics/Integer types and operations/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Account Service" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Area of a circle" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Marker interface" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Properties of methods" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Interface/What can an interface have" />
+            <option value="$PROJECT_DIR$/Topics/Interface/What does an interface define" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Which methods must be overridden" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Fill the matrix by numbers" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Getting an element from a 3D array" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Multidimensional array features" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Rotate a rectangle array" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Swap the columns" />
+            <option value="$PROJECT_DIR$/Topics/Multidimensional array/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Convert a date" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Create an euphonious word" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Determine the value" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Double characters" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Generating passwords" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Palindrome" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/The lucky ticket" />
+            <option value="$PROJECT_DIR$/Topics/Processing strings/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/Boys in a sport class" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/Check the given numbers are different" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/Check the value" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/Existing operators" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/Groundhogs at a party" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/The result is true" />
+            <option value="$PROJECT_DIR$/Topics/Relational operators/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Static members/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Static members/Too many cats" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/Behold the power of StringBuilder" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/Concat all strings without digits" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/Immutability" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/Multiple modifications" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/Statements" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/The English alphabet" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/The actual number of characters" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/Theory" />
+            <option value="$PROJECT_DIR$/Topics/StringBuilder/What is the output" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/A package" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Blacklist" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Collection interfaces" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Collections properties" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Creating instances" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Extra methods" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Inheritance of standard collections" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Root interfaces" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Squares list" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Supported collections" />
+            <option value="$PROJECT_DIR$/Topics/The Collections Framework overview/Theory" />
+            <option value="$PROJECT_DIR$/Topics/The List interface/Companies" />
+            <option value="$PROJECT_DIR$/Topics/The List interface/Filtering the list" />
+            <option value="$PROJECT_DIR$/Topics/The List interface/The longest string in the list" />
+            <option value="$PROJECT_DIR$/Topics/The List interface/Theory" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
