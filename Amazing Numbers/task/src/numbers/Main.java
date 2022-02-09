@@ -83,17 +83,17 @@ public class Main {
             System.out.println();
             if (isRunning) {
                 if (isSingle) {
-                    BigInteger number = new BigInteger("-1"); //Creating a BigInteger number. This is used for large numbers. It's set to -1 because it must be 0 or greater. We will update this in the following code
+                    BigInteger number = new BigInteger("-1"); // Creating a BigInteger number. This is used for large numbers. It's set to -1 because it must be 0 or greater. We will update this in the following code
                     try {
-                        number = BigInteger.valueOf(Long.parseLong(input)); //Trying to add number, if it isn't a number, it will catch an exception and go to catch
+                        number = BigInteger.valueOf(Long.parseLong(input)); // Trying to add number, if it isn't a number, it will catch an exception and go to catch
                     } catch (NumberFormatException ignored) {
                     }
-                    int numCompare = number.compareTo(zero); //We are comparing the number to 0 and if it is less, it returns -1, if equal 0, if greater 1
-                    if (numCompare <= 0) { //this will be fulfilled if the int above is less than or equal to 0. This is to ensure that the number is greater or equal to 0 as required
+                    int numCompare = number.compareTo(zero); // We are comparing the number to 0 and if it is less, it returns -1, if equal 0, if greater 1
+                    if (numCompare <= 0) { // this will be fulfilled if the int above is less than or equal to 0. This is to ensure that the number is greater or equal to 0 as required
                         System.out.println("The first parameter should be a natural number or zero.");
-                    } else { //if it is greater than 0, the following will fulfill
+                    } else { // if it is greater than 0, the following will fulfill
                         System.out.println("Properties of " + number);
-                        System.out.println("even: " + evenChecker(number)); //This returns a boolean of true or false, true if the number is even, false is not. This is the case for all of these checkers and their code further down
+                        System.out.println("even: " + evenChecker(number)); // This returns a boolean of true or false, true if the number is even, false is not. This is the case for all of these checkers and their code further down
                         System.out.println("odd: " + oddChecker(number));
                         System.out.println("buzz: " + buzzChecker(number));
                         System.out.println("duck: " + duckChecker(number));
@@ -107,11 +107,11 @@ public class Main {
                         System.out.println("sad: " + sadChecker(number));
                     }
                 } else {
-                    String[] requestArray = input.toUpperCase().split(" "); //array of the user input
+                    String[] requestArray = input.toUpperCase().split(" "); // array of the user input
                     BigInteger startingNum = BigInteger.valueOf(Long.parseLong(requestArray[0])); //the starting number from the input
                     BigInteger numAmount = BigInteger.valueOf(Long.parseLong(requestArray[1])); //the amount of numbers required from the input
                     if (isMultiple) {
-                        if (Long.parseLong(String.valueOf(startingNum)) < 0) { //number checkers again
+                        if (Long.parseLong(String.valueOf(startingNum)) < 0) { // number checkers again
                             System.out.println("The first parameter should be a natural number or zero.");
                         }
                         if (Long.parseLong(String.valueOf(numAmount)) <= 0) {
@@ -120,7 +120,7 @@ public class Main {
                             for (int i = 0; i < Long.parseLong(String.valueOf(numAmount)); i++) {
                                 System.out.print(startingNum + " is ");
                                 StringBuilder sb = new StringBuilder();
-                                if (evenChecker(startingNum)) { //these test if the number is even, if so, it adds the text below it
+                                if (evenChecker(startingNum)) { // these test if the number is even, if so, it adds the text below it
                                     sb.append(" even,");
                                 } else if (oddChecker(startingNum)) {
                                     sb.append(" odd,");
@@ -155,14 +155,14 @@ public class Main {
                                 if (sadChecker(startingNum)) {
                                     sb.append(" sad,");
                                 }
-                                System.out.println(sb.toString().trim().substring(0, sb.toString().length() - 2)); //this removes the last pieces of the String so it doesn't end in "happy, " but "happy"
+                                System.out.println(sb.toString().trim().substring(0, sb.toString().length() - 2)); // this removes the last pieces of the String so it doesn't end in "happy, " but "happy"
                                 startingNum = startingNum.add(one);
                             }
                         }
                     } else if (isMultipleSpecific) {
-                        String numType = requestArray[2].toUpperCase(); //The number type ("even, odd") etc.
+                        String numType = requestArray[2].toUpperCase(); // The number type ("even, odd") etc.
                         int numTypeCount = 0;
-                        boolean isProperty = false; //boolean to ensure that the number type the user inputs is in the available property list which includes all the even, odd options
+                        boolean isProperty = false; // boolean to ensure that the number type the user inputs is in the available property list which includes all the even, odd options
                         for (String properties : this.availableProperties) {
                             if (properties.equals(numType)) {
                                 isProperty = true;
@@ -184,11 +184,11 @@ public class Main {
                             System.out.println("The second parameter should be a natural number.");
                         }
                         if (!isProperty) {
-                            System.out.println("The property [" + numType + "] is wrong."); //if it is not a property, this is displayed
+                            System.out.println("The property [" + numType + "] is wrong."); // if it is not a property, this is displayed
                             System.out.println("Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SUNNY, SQUARE, JUMPING, HAPPY, SAD]");
                         } else {
                             while (numTypeCount < Long.parseLong(String.valueOf(numAmount))) {
-                                StringBuilder sb = new StringBuilder(); //same as above
+                                StringBuilder sb = new StringBuilder(); // same as above
                                 if (evenChecker(startingNum)) {
                                     sb.append(" even,");
                                 } else if (oddChecker(startingNum)) {
@@ -225,8 +225,8 @@ public class Main {
                                     sb.append(" sad,");
                                 }
                                 String line = sb.toString().trim().substring(0, sb.toString().length() - 2);
-                                if (numType.startsWith("-")) { //if the string starts with - like -EVEN, we want to go to the code under it
-                                    String minus = numType.substring(1); //this makes -EVEN, EVEN so String minus = "EVEN" if numType = "-EVEN"
+                                if (numType.startsWith("-")) { // if the string starts with - like -EVEN, we want to go to the code under it
+                                    String minus = numType.substring(1); // this makes -EVEN, EVEN so String minus = "EVEN" if numType = "-EVEN"
                                     if (!(sb.toString().toUpperCase().contains(minus))) { //this means if the String does not contain minus, because we're not including anything that is minus because that num type is excluded, then we do the code under it
                                         numTypeCount++;
                                         System.out.print(startingNum + " is ");
